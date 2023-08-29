@@ -1,4 +1,7 @@
 from RPA.Browser.Selenium import Selenium
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 browser_lib = Selenium()
 
@@ -21,6 +24,12 @@ def store_screenshot(filename):
 def main():
     try:
         open_the_website("https://www.nytimes.com/")
+        button_ele = '//*[@id="complianceOverlay"]/div/button'
+        button = browser_lib.find_element(button_ele)
+        button.click()
+        WebDriverWait(browser_lib.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='app']/div[2]/div[2]/header/section[1]/div[1]/div[2]/button"))
+        ).click()
         # search_for("python")
         store_screenshot("output/screenshot1.png")
     finally:
