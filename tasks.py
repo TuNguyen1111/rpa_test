@@ -20,9 +20,9 @@ def store_screenshot(filename):
 # Define a main() function that calls the other functions in order:
 def main():
     try:
-        open_the_website("https://robocorp.com/docs/")
-        search_for("python")
-        store_screenshot("output/screenshot.png")
+        open_the_website("https://www.nytimes.com/")
+        # search_for("python")
+        store_screenshot("output/screenshot1.png")
     finally:
         browser_lib.close_all_browsers()
 
