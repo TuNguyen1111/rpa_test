@@ -27,8 +27,8 @@ def main():
         button_ele = '//*[@id="complianceOverlay"]/div/button'
         button = browser_lib.find_element(button_ele)
         button.click()
-        button_2 = browser_lib.find_element("//*[@id='app']/div[2]/div[2]/header/section[1]/div[1]/div[2]/button")
-        button_2.click()
+        button = browser_lib.driver.find_element(By.CSS_SELECTOR, "button[data-testid*='search-button']")
+        button.click()
         # search_for("python")
         store_screenshot("output/screenshot1.png")
     finally:
