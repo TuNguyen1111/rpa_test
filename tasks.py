@@ -27,9 +27,8 @@ def main():
         button_ele = '//*[@id="complianceOverlay"]/div/button'
         button = browser_lib.find_element(button_ele)
         button.click()
-        WebDriverWait(browser_lib.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//*[@id='app']/div[2]/div[2]/header/section[1]/div[1]/div[2]/button"))
-        ).click()
+        button_2 = browser_lib.find_element("//*[@id='app']/div[2]/div[2]/header/section[1]/div[1]/div[2]/button")
+        button_2.click()
         # search_for("python")
         store_screenshot("output/screenshot1.png")
     finally:
